@@ -44,8 +44,8 @@ public class BoardService {
                 spaces.add(new ArrayList<>());
                 for(int j = 0; j < BOARD_LIMIT; j++){
                     var positionConfig = gameConfig.get("%s,%s".formatted(i, j));
-                    var expected = Integer.parseInt(positionConfig.split(";")[0]);
-                    var fixed = Boolean.parseBoolean(positionConfig.split(";")[1]);
+                    var expected = Integer.parseInt(positionConfig.split(",")[0]);
+                    var fixed = Boolean.parseBoolean(positionConfig.split(",")[1]);
                     var currentSpace = new Space(expected, fixed);
                     spaces.get(i).add(currentSpace);
                 }
